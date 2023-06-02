@@ -7,12 +7,15 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
@@ -34,43 +37,13 @@ public class Test2Test {
     driver.quit();
   }
   @Test
-  public void test2() {
-    driver.get("https://mvnrepository.com/");
-    driver.manage().window().setSize(new Dimension(1008, 875));
-    driver.findElement(By.linkText("Flapdoodle Embedded Process Util")).click();
-    driver.findElement(By.linkText("4.7.0")).click();
-    driver.findElement(By.linkText("Gradle (Short)")).click();
-    driver.findElement(By.linkText("Gradle (Kotlin)")).click();
-    driver.findElement(By.id("query")).click();
-    driver.findElement(By.id("query")).sendKeys("junit");
-    driver.findElement(By.id("query")).click();
-    driver.findElement(By.cssSelector(".button")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("junit-jupiter-api"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.linkText("org.junit.jupiter"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.tagName("body"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();
-    }
-    driver.findElement(By.linkText("JUnit")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector("td > a > b"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.tagName("body"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();
-    }
-    driver.findElement(By.cssSelector(".tabs > li:nth-child(2) > a")).click();
+  public void test2() throws InterruptedException {
+    driver.get("https://github.com/");Thread.sleep(2000);
+    driver.manage().window().setSize(new Dimension(1440, 875));Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".HeaderMenu-item:nth-child(3) > .HeaderMenu-link")).click();Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".border-bottom:nth-child(2) > .list-style-none .color-fg-default")).click();Thread.sleep(2000);
+    driver.findElement(By.cssSelector(".d-flex:nth-child(1) > .col-8 span")).click();Thread.sleep(2000);
+    driver.findElement(By.cssSelector("p:nth-child(3) > a:nth-child(2) > u")).click();Thread.sleep(2000);
+    driver.findElement(By.linkText("Privacy")).click();Thread.sleep(2000);
   }
 }
